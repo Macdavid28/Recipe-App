@@ -35,8 +35,10 @@ export const Recipes = () => {
     <div>
       {isLoading && <h1>Loading...</h1>}
       {isError && <h1>Could not find recipe</h1>}
-      {!isError && random?.meals.map((random) => <h1>{random.strMeal} </h1>)}
-      {!isError && ( data?.meals.map((recipe) => <h1>{recipe.strMeal} </h1>))}
+      {!isError &&
+        !foodName &&
+        random?.meals.map((random) => <h1>{random.strMeal} </h1>)}
+      {!isError && data?.meals.map((recipe) => <h1>{recipe.strMeal} </h1>)}
       <input
         type="text"
         onChange={(e) => {
